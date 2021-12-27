@@ -4,7 +4,7 @@ my_list.sort()
 print('ID of sorted price list:', id(my_list))
 val_list = ''
 for val in my_list:
-    if my_list.index(val) < len(my_list) and str(val).count('.'):
+    if my_list.index(val) < len(my_list) and isinstance(val, float):
         rub = str(val).split('.')[0]
         cope = str(val).split('.')[1]
         val_list += f'{rub} руб {cope:02} коп, '
@@ -16,7 +16,7 @@ my_list.sort(reverse=True)
 print('ID of reversed sorted price list:', id(my_list))
 val_list_r = ''
 for val in my_list[:5]:
-    if my_list.index(val) < len(my_list[:5]) and str(val).count('.'):
+    if my_list.index(val) < len(my_list[:5]) and isinstance(val, float):
         rub = str(val).split('.')[0]
         cope = str(val).split('.')[1]
         val_list_r += f'{rub} руб {cope:02} коп, '
