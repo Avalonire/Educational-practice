@@ -10,8 +10,6 @@ def thesaurus_adv(*args):
     for people in args:
         surname = str.split(people, ' ')[1][0]
         result_adv.update({surname: list(filter(lambda el: el[el.index(' ') + 1:].startswith(f'{surname}'), args))})
-    # print(result_adv)
-
     for item in result_adv:
         result_adv[item] = thesaurus(*result_adv[item])
     return result_adv
